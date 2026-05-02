@@ -4,11 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
     <title>Mini Ecommerce - Catálogo em Cards</title>
 </head>
 <body>
+
+    <header>
+        <h1>Mini Ecommerce</h1>
+        <nav>
+            <input id="search">
+
+            <select id="category">
+                <option value="all">Todas</option>
+            </select>
+
+            <button id="btnRender">Renderizar</button>
+        </nav>
+    </header>
     
-    
+    <main>
+
+        <div id="product-list"></div>
+        <div id="product-details"></div>
+
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
