@@ -8,10 +8,12 @@ A atividade foi pensada para ser concluída em até 1h no laboratório, usando V
 
 ## Informações Gerais
 
-- Nome:
-- Matricula:
+- Nome: Iale Leles de Almeida
+- Matricula: 927707
 
 ## Print dos cards renderizados  e da área de detalhes preenchida após clicar em “Ver detalhes”
+![alt text](printcards1.png)
+![alt text](printcards2.png)
 
 ## Print do Console do navegador mostrando alguma saída gerada por você (ex.: listagem de data-id via querySelectorAll)
-
+![alt text](image.png)
