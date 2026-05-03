@@ -15,7 +15,7 @@ const data = {
             nome: "iPhone 15 Pro",
             preco: 7500,
             categoria: "Celulares",
-            imagem: "https://m.media-amazon.com/images/I/81Sig6biNGL._AC_SL1500_.jpg",
+            imagem: "https://files.tecnoblog.net/wp-content/uploads/2025/01/iphone-15-pro-titanio-azul.png",
             descricao: "O chip A17 Pro garante o melhor desempenho.",
             emEstoque: true
         },
@@ -33,16 +33,16 @@ const data = {
             nome: "PlayStation 5",
             preco: 3800,
             categoria: "Games",
-            imagem: "https://m.media-amazon.com/images/I/510uTHyDqGL._AC_SL1000_.jpg",
+            imagem: "https://www.manualpdf.com.br/gallery/46722010.webp",
             descricao: "Experimente o carregamento ultrarrápido do SSD.",
             emEstoque: false
         },
         {
             id: 5,
             nome: "Mouse Gamer Logitech",
-            preco: 250,
+            preco: 650,
             categoria: "Acessórios",
-            imagem: "https://m.media-amazon.com/images/I/51S3E3-3pYL._AC_SL1500_.jpg",
+            imagem: "https://primetek.vtexassets.com/arquivos/ids/181220/mouse-gamer-logitech-g-pro-2-rgb-32000dpi-8-botoes-wireless-preto-910-007294-1.jpg?v=638694524277530000",
             descricao: "Alta precisão para suas partidas.",
             emEstoque: true
         },
@@ -51,7 +51,7 @@ const data = {
             nome: "Teclado Mecânico RGB",
             preco: 450,
             categoria: "Acessórios",
-            imagem: "https://m.media-amazon.com/images/I/71Y8SndX6HL._AC_SL1500_.jpg",
+            imagem: "https://http2.mlstatic.com/D_NQ_NP_900856-MLB79078620818_092024-O.webp",
             descricao: "Switch blue com iluminação personalizável.",
             emEstoque: true
         },
@@ -59,17 +59,17 @@ const data = {
             id: 7,
             nome: "Monitor 4K 27'",
             preco: 2100,
-            categoria: "Notebooks",
-            imagem: "https://m.media-amazon.com/images/I/71Vj3T9p3yL._AC_SL1500_.jpg",
+            categoria: "Periférico",
+            imagem: "https://www.lg.com/content/dam/channel/wcms/br/images/produtos/it/27up650-w/1-1600-27up650-w.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
             descricao: "Resolução máxima para trabalho e lazer.",
             emEstoque: true
         },
         {
             id: 8,
             nome: "Controle DualSense Edge",
-            preco: 1200,
+            preco: 500,
             categoria: "Games",
-            imagem: "https://m.media-amazon.com/images/I/61N6K6lS6EL.jpg",
+            imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS07MESCqFKNBUuZyWJ4zDlNsbHi3hA7TF-Sw&s",
             descricao: "Controle profissional com botões mapeáveis.",
             emEstoque: false
         }
