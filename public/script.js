@@ -85,7 +85,8 @@ function createProductCard(produto) {
     
     const card = document.createElement('div');
     card.classList.add('card');
-    card.classList.add('card');
+    
+    card.setAttribute('data-id', produto.id);
 
     card.innerHTML = `
         <img src="${produto.imagem}" alt="${produto.nome}" style="width: 80px;">
@@ -114,13 +115,10 @@ function createProductCard(produto) {
 }
 
 function renderProducts(produtos) {
-
     const container = document.getElementById('product-list');
-    
     container.innerHTML = "";
 
     produtos.forEach(produto => {
-
         const card = createProductCard(produto);        
         container.appendChild(card);
     });
@@ -128,10 +126,11 @@ function renderProducts(produtos) {
     const todosOsCards = document.querySelectorAll(".card");
 
     todosOsCards.forEach((card, index) => {
-        console.log(`Card ${index + 1} renderizado.`);
+        const idDoProduto = card.getAttribute('data-id');
+        console.log(`Card ${index + 1} encontrado no DOM. ID do Produto: ${idDoProduto}`);
 
+        card.style.border = "1px solid #3498db";
         card.style.opacity = "0";
-        card.style.transition = "opacity 0.5s ease-in-out";
 
         setTimeout(() => {
             card.style.opacity = "1";
@@ -185,13 +184,17 @@ function filterProducts() {
     });
 }
 
+document.getElementById('search').addEventListener('input', () => {
+    renderProducts(filterProducts());
+});
+
 document.getElementById('btnRender').addEventListener('input', () => {
     renderProducts(filterProducts());
 });
 
 document.getElementById('category').addEventListener('change', () => {
     renderProducts(filterProducts());
-})
+});
 
 renderProducts(data.produtos);
 renderCategories();
