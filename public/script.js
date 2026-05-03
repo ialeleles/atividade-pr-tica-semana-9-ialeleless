@@ -85,29 +85,29 @@ function createProductCard(produto) {
     
     const card = document.createElement('div');
     card.classList.add('card');
-    card.setAttribute('data-id', produto.id); 
-    
-    card.style.padding = "20px";
-    card.style.border = "1px solid #ddd";
+    card.classList.add('card');
 
-    const img = document.createElement('img');
-    img.src = produto.imagem;
-    img.alt = produto.nome;
-    img.style.width = "100px";
+    card.innerHTML = `
+        <img src="${produto.imagem}" alt="${produto.nome}" style="width: 80px;">
+        <h3>${produto.nome}</h3>
+        <p>${formatPrice(produto.preco)}</p>
+        <p><small>${produto.categoria}</small></p>
+        <div class="acoes">
+            <button class="btn-detalhes">Ver detalhes</button>
+            <button class="btn-destacar">Destacar</button>
+        </div>
+    `;
 
-    const titulo = document.createElement('h3');
-    titulo.textContent = produto.nome;
-    titulo.classList.add('card-title');
-
-    const preco = document.createElement('p');
-    preco.textContent = formatPrice(produto.preco);
-
-    card.appendChild(img);
-    card.appendChild(titulo);
-    card.appendChild(preco);
-
-    card.addEventListener('click', () => {
+    const btnDetalhes = card.querySelector('.btn-detalhes');
+    btnDetalhes.addEventListener('click', (e) => {
+        e.stopPropagation();
         showProductDetails(produto);
+    })
+
+    const bntDestacar = card.querySelector('.btn-destacar');
+    bntDestacar.addEventListener('click', (e) => {
+        e.stopPropagation();
+        card.classList.toggle('destaque');
     });
 
     return card;
@@ -123,6 +123,19 @@ function renderProducts(produtos) {
 
         const card = createProductCard(produto);        
         container.appendChild(card);
+    });
+
+    const todosOsCards = document.querySelectorAll(".card");
+
+    todosOsCards.forEach((card, index) => {
+        console.log(`Card ${index + 1} renderizado.`);
+
+        card.style.opacity = "0";
+        card.style.transition = "opacity 0.5s ease-in-out";
+
+        setTimeout(() => {
+            card.style.opacity = "1";
+        }, index * 100);
     });
 }
 
@@ -172,16 +185,13 @@ function filterProducts() {
     });
 }
 
-document.getElementById('btnRender').addEventListener('click', () => {
-    const listaFiltrada = filterProducts();
-    renderProducts(listaFiltrada);
-
-    const areaDetalhes = document.getElementById('product-details');
-    if (areaDetalhes) {
-        areaDetalhes.innerHTML = "";
-    }
-
+document.getElementById('btnRender').addEventListener('input', () => {
+    renderProducts(filterProducts());
 });
+
+document.getElementById('category').addEventListener('change', () => {
+    renderProducts(filterProducts());
+})
 
 renderProducts(data.produtos);
 renderCategories();
